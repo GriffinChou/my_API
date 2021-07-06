@@ -1,0 +1,25 @@
+import string
+'''
+功能：输入任意的英文单词或者字母，然后对输入进行统计
+'''
+# 去除标点符号
+def dropChar():
+    sp = string.punctuation
+    text = input()
+    for i in sp:
+        text = text.replace(i, ' ')
+    return text
+
+# 统计字符数目
+def count():
+    text = dropChar().split(' ')
+    mydict={}
+    for i in text:
+        if i in mydict:
+            mydict[i] += 1
+        else:
+            mydict[i] = 1
+    for key, value in mydict.items():
+        print(key, value)
+# text = 'hello,world,hello griffin,hello you!'
+count()
